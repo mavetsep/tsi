@@ -1,0 +1,78 @@
+<h1 style="text-align: center;"> Listagem de usuários </h1>
+<p-button (click)="onGetUsuarios()" label="Listar"> </p-button> <br> <br>
+<hr>
+
+<table> 
+    <tr> 
+        <td> <b> Código </b> </td>
+        <td> {{ usuarioSelecionado?.id }} </td>
+    </tr>
+    <tr> 
+        <td> <b> Nome </b> </td>
+        <td> {{ usuarioSelecionado?.first_name }} </td>
+    </tr>
+    <tr> 
+        <td> <b> Sobrenome </b> </td>
+        <td> {{ usuarioSelecionado?.last_name }} </td>
+    </tr>
+    <tr> 
+        <td> <b> E-mail </b> </td>
+        <td> {{ usuarioSelecionado?.email }} </td>
+    </tr>
+    <tr> 
+        <td> <b> Avatar </b> </td>
+        <td> <img src="{{ usuarioSelecionado?.avatar }}" style="width: 64px; border-radius: 360px;">  </td>
+    </tr>
+</table>
+
+<p-table #minhaTabela
+    [value]="usuarios"
+    dataKey="id"
+    selectionMode="single"
+    [(selection)]="usuarioSelecionado"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [globalFilterFields]="['id','first_name', 'last_name', 'email']">
+
+    <ng-template #caption>
+        <div class="flex">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                
+                <input
+                    pInputText
+                    type="text"
+                    [(ngModel)]="texto"
+                    (input)="minhaTabela.filterGlobal(texto, 'contains')"
+                    placeholder="Search keyword"
+                />
+            </p-iconfield>
+        </div>
+    </ng-template>
+
+    <ng-template #header>
+        <tr>
+            <th pSortableColumn="id" style="width:30%" style="text-align: center;"> Codigo <p-sortIcon field="id" />
+            <th pSortableColumn="first_name" style="width:30%" style="text-align: center;"> Nome <p-sortIcon
+                    field="first_name" />
+            <th pSortableColumn="last_name" style="width:30%" style="text-align: center;"> Sobrenome <p-sortIcon
+                    field="last_name" />
+            <th pSortableColumn="email" style="width:10%" style="text-align: center;"> E-mail <p-sortIcon field="email" />
+        </tr>
+    </ng-template>
+    <ng-template #body let-usuario>
+        <tr [pSelectableRow]="usuario">
+            <td style="text-align: center;">{{ usuario.id }}</td>
+            <td style="text-align: center;">{{ usuario.first_name }}</td>
+            <td style="text-align: center;">{{ usuario.last_name }}</td>
+            <td style="text-align: center;">{{ usuario.email }}</td>
+            <td style="text-align: center;"> <img src="{{ usuario.avatar }}" style="width: 64px; border-radius: 360px;">
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<router-outlet />

@@ -1,0 +1,20 @@
+Sistemas Distribuídos
+
+“Um sistema distribuído consiste de um conjunto de computadores autônomos que trabalham juntos para dar aparência 
+de um único sistema coerente”.
+
+O objetivo principal é oferecer ao usuário uma visão transparente e independente da estrutura de rede e de hardware.
+
+Comumente uma camada de software integrada ao S.O. é responsável por obter essa transparência.
+
+O usuário destes sistemas comumente vê apenas uma aplicação executando remotamente.
+
+É comum o uso de sistemas distribuídos em aplicações que exigem grande poder de processamento.
+
+Historicamente os grandes centros de processamento eram máquinas enormes construídas para um único fim.
+
+Hoje a maioria dos super-computadores é um aglomerado de várias máquinas de médio porte conhecidos como clusters.
+
+Os sistemas distribuídos permitem agrupar em um único sistema, várias aplicações que executam em computadores diferentes.
+
+O crescimento das redes de computadores hoje é exponencial, a cada dia agrega-se mais serviços à rede.

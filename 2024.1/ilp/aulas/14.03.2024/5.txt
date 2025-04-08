@@ -1,0 +1,5 @@
+1. Início
+2.      Ler raio
+3.      volume = (4/3 * 3.14 * raio * raio * raio)
+4.      Exibir (vaolume)
+5. Fim

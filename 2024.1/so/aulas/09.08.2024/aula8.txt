@@ -1,0 +1,11 @@
+Swapping e Alocação de memória
+
+Se cada processo consome parte da memória como um sistema com uma quantidade limitada de memória poderia
+executar tantos processos?
+
+Duas estratégias são comuns:
+– Swapping: tira um processo da memória RAM e leva até a memódia secundária (HD/SSD) e coloca outro no lugar. 
+– Memória Virtual: 
+
+Compactação da memóroria: move os processos para baixo na memória a fim de ocupar os espaços vazios e deixar
+os espaços disponíveis contínuos acima. Leva um grande tempo para ser realizado.

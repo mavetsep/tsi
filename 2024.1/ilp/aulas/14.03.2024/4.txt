@@ -1,0 +1,6 @@
+1. Início
+2.      Ler base
+3.      Ler altura
+4.      area = (base * altura / 2)
+5.      Exibir (area)
+6. Fim

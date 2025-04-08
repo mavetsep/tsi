@@ -1,0 +1,47 @@
+* {
+    background-color: black;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: justify;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+input {
+    border-radius: 10px;
+    border: 0;
+    background-color: white;
+    color: black;
+    padding: 0.3rem;
+    transition: 0.5s;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input:hover {
+    background-color: lightgray;
+}

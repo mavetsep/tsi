@@ -1,0 +1,18 @@
+Algoritmos de escalonamento de CPU:
+
+FCFS ou FIFO (first come first served / first in first out): quem entra primeiro, sai primeiro. Fila simples.
+    Algoritmo simples. Processos são criados e entram em uma fila. CPU atende o primeiro que está na fila e trata-o até o final. Só sai da fila quem finalizar
+    ou entrar em modo de espera. Ao terminar entra o próximo. O processo que não está em execução está travado. Tempo de turnaround (tempo total entre o processo 
+    ser criado e finalizado).
+
+
+SJF (Shrtest Job First): mais fácil primeiro. Quem vai usar menos primeiro. Mais rentável em termos de produtividade. Problema é que só existe na teoria, 
+na prática não tem como ser implementado 100% porque não é possível saber o tempo que cada processo vai usar. O SJF serve como média de tempo de algoritmos.
+    Dois esquemas:
+        - Não preemptivo: ninguém entra na frente depois de inicializado.
+        - Preemptivo: se um processo novo com menos tempo necessário chegar ele entra na frente. SRTF (Shortest-Remaining-Time-First).
+
+
+Circular (Round Robin): vai atendendo todos de forma circular a fim de tornar-se mais justo.
+    Cada processo possui um tempo fixo (quantum) de cpu que pode utilizar, ao expirar o tempo o processo volta para o fim da fila.
+    Como o tempo de alternância é de nano segundos não percebemos uma música pausando para a cpu executar outro processo, por exemplo.

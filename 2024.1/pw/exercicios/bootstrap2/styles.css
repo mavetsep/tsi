@@ -1,0 +1,11 @@
+body, html {
+    height: 100%;
+    display: grid;
+}
+
+.center-me {
+    margin: auto;
+    background-color: white;
+    border-radius: 25px;
+    padding-bottom: 2.5rem;
+}

@@ -1,0 +1,7 @@
+1. Início
+2.      Ler segundos
+3.      minutos = (segundos % 3600) / 60
+4.      horas = segundos / 3600
+5.      restante = segundos % 60
+6.      Exibir ("O tempo equivalente é: ", horas, ":", minutos, ":", segundos_restantes)
+7. Fim      

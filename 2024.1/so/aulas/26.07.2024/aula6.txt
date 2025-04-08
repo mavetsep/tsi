@@ -1,0 +1,26 @@
+Escalonador: gerencia os processos que serão executados no sistema operacional.
+
+Tipos:
+- Batch: um processo de cada vez;
+- Iterativo: alternância entre processos com mudanças rápidas. Overhead: tempo de latência entre a troca de contexto (utiliza primeiramente a memória cache
+da cpu, ou a memória ram [mais lenta].).
+- Tempo real: o sistema operacional precisará saber qual processo precisa de tal prioridade e executá-lo nessa. Caso perca alguma dessas informações, grandes problemas irão ocorrer.
+Dividido em soft-real-time e hard-real-time.
+
+Características:
+- Preemptível: pode interromper o processo no meio de sua execução. (Ex: iterativo).
+- Não preemptível: não pode "". (Ex: batch). 
+
+Processos:
+I/O bound: fluxos pequenos de cpu e muito longos de e/s.
+Cpu bound: o contrário. Normalmente são preemptíveis.
+
+Conjunto de algoritmos e estratégias para decidir qual o melhor caminho para executar os processos.
+
+Objetivos do escalonador: 
+Todos os sistemas: justiça, aplicação cumprida, equilíbrio.
+Sistemas em lote: vazão, tempo de retorno, utilização.
+""          interativos: tempo de resposta, satisfazer as expectavivas. 
+""          tempo-real:  prazos e previsibilidade.
+
+Critérios do escalonador: utilização de cpu, throughput, tempo de turnaround, tempo de espera e de resposta.

@@ -1,0 +1,76 @@
+<h1>Clínica Veterinária</h1>
+<hr />
+<form>
+  <table>
+    <tr>
+      <td>Nome:</td>
+      <td><input type="text" name="nome" [(ngModel)]="cliente.nome" /></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" name="email" [(ngModel)]="cliente.email" /></td>
+    </tr>
+    <tr>
+      <td>Telefone:</td>
+      <td><input type="text" name="fone" [(ngModel)]="cliente.telefone" /></td>
+    </tr>
+    <tr>
+      <td>Data cadastro:</td>
+      <td>
+        <input type="date" name="cadastro" [(ngModel)]="cliente.dataCadastro" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="button">Salvar</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<h3>Lista de animais</h3>
+<hr />
+<form>
+  <table>
+    <tr>
+      <td>Nome:</td>
+      <td><input type="text" name="nomeAnimal" [(ngModel)]="nomeAnimal" /></td>
+      <td>Nasc.:</td>
+      <td>
+        <input
+          type="date"
+          name="nascAnimal"
+          [(ngModel)]="dataNascimentoAnimal"
+        />
+      </td>
+      <td>Sexo:</td>
+      <td><input type="text" name="sexoAnimal" [(ngModel)]="sexoAnimal" /></td>
+      <td>Espécie:</td>
+      <td>
+        <input type="text" name="especieAnimal" [(ngModel)]="especieAnimal" />
+      </td>
+      <td><button type="button" (click)="onAdicionarAnimal()">Add</button></td>
+    </tr>
+  </table>
+</form>
+<hr />
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Nasc.</th>
+    <th>Sexo</th>
+    <th>Espécie</th>
+  </tr>
+  @for (animal of cliente.animais; track animal.nome) {
+  <tr>
+    <td>{{ animal.nome }}</td>
+    <td>{{ animal.dataNascimento }}</td>
+    <td>{{ animal.sexo }}</td>
+    <td>{{ animal.especie }}</td>
+  </tr>
+  } @empty {
+    <tr>
+      <td colspan="4">Nenhum animal cadastrada até o momento</td>
+    </tr>
+  }
+</table>
+<span style="color: red;">{{ mensagemErro }}</span>

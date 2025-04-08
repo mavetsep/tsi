@@ -1,0 +1,6 @@
+1. Início
+2.      Ler peso
+3.      Ler altura
+4.      imc = (peso/(altura*altura))
+5.      Exibir (imc)
+6. Fim

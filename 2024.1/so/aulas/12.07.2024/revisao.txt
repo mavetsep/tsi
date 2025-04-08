@@ -1,0 +1,25 @@
+Aula 1 - Conceitos de Hardware
+CPU só trabalha com o que está nos registradores;
+Barramentos possuem velocidades diferentes;
+
+Aula 2 - Tipos de sistemas operacionais
+Sistemas operacionais para servidores são mais focados em estabilidade, enquanto os de uso doméstico são focados em usabilidade;
+Sistemas operacionais em relação à estrutura:
+    Monolítico - É executado inteiramente em modo privilegiado. Mais rápido;
+    Microkernel - Dentro do kernel do sistema operacional está apenas o essencial para ser executado em modo privilegiado, o resto é executado em modo usuário. Mais seguro;
+    Cliente-Servidor - Aplicações usam serviços do sistema operacional servidor que pode ser distribuido na rede.
+    Máquinas Virtuais - Sistema operacional isolado do principal;
+
+Aula 3 - Processos
+Um processo é um conjunto de códigos, váriaveis, arquivos e o espaço de memória destinado. Um programa em execução;
+Troca de contexto: um processo sai para a entrada de outro;
+
+Aula 4 - Espaços de Endereços
+MMU Traduz endereços de memória;
+Sempre que um processo tenta acessar a memória RAM passa pelo MMU que gerencia seu espaço de memória;
+O sistema operacional impede o acesso de um processo à memória de outro através de mecanismos como o Base-Limite, que gera o início e o fim de até onde vai ser alocada a memória de tal processo;
+
+Aula 5 - Entrada e Saída
+Gerenciar os dispositivos conectados à máquina;
+Dispositivos que não são preemptíveis são àqueles que não podem ser retirados no meio do processo de execução, como portas sereiais;
+Dispositivos de bloco têm seus dados lidos em blocos de bytes (pen drive, hds, ssds), ao contrário dos dispositivos de caracteres que são lidos bytes a bytes (impressora, rede, mouse);

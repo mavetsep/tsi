@@ -1,0 +1,13 @@
+1. Início
+2.      Ler valor1
+3.      Ler valor2
+4.      soma = (valor1 + valor2)
+5.      subtração = (valor1 - valor2)
+6.      multiplicação = (valor1 * valor2)
+7.      divisão = (valor1 / valor2)
+8.      Exibir (soma)
+9.      Exibir (subtração)
+10.     Exibir (multiplicação)
+11.     Exibir (divisão)
+10. Fim
+

@@ -1,0 +1,8 @@
+1. Início
+2.      Ler a
+3.      Ler b
+4.      Ler c
+5.      Ler x
+6.      y = (a * x * x) + (b * x) + c
+7.      Exibir (y)
+8. Fim

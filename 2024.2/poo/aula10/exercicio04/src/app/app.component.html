@@ -1,0 +1,82 @@
+<h1> Controle de pedidos</h1>
+<hr>
+
+<form> 
+    <table>
+        <tr>
+            <td> Número: </td>
+            <td> <input type="number" name="numero" [(ngModel)]="notaFiscal.numero"> </td>
+        </tr>
+
+        <tr>
+            <td> Nome do cliente: </td>
+            <td> <input type="text" name="cliente" [(ngModel)]="notaFiscal.cliente"> </td>
+        </tr>
+
+        <tr>
+            <td> End. de entrega: </td>
+            <td> <input type="text" name="enderecoEntrega" [(ngModel)]="notaFiscal.enderecoEntrega"> </td>
+        </tr>
+        
+    </table>
+</form>
+
+<h2> Itens </h2>
+<hr>
+<form>
+    <table>
+        <tr>
+            <td> Código: </td>
+            <td> <input type="number" name="codigo" [(ngModel)]="itemCodigo"> </td>
+        </tr>
+
+        <tr>
+            <td> Descrição: </td>
+            <td> <input type="text" name="descricao" [(ngModel)]="itemDescricao"> </td>
+        </tr>
+
+        <tr>
+            <td> Quantidade: </td>
+            <td> <input type="number" name="quantidade" [(ngModel)]="itemQuantidade"> </td>
+        </tr>
+        
+        <tr>
+            <td> Valor unit.: </td>
+            <td> <input type="number" name="valorUnitario" [(ngModel)]="itemValorUnitario"> </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <button (click)="adicionarItem()"> Adicionar </button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<hr>
+
+<table>
+    <tr>
+        <th> Código </th>
+        <th> Descrição </th>
+        <th> Quantidade </th>
+        <th> Valor unit. </th>
+        <th> Remover </th>
+    </tr>
+    @for (item of notaFiscal.itens; track item.codigo; let indice = $index) {
+        <tr>
+            <td> {{ item.codigo }} </td>
+            <td> {{ item.descricao }} </td>
+            <td> {{ item.quantidade }} </td>
+            <td> {{ item.valorUnitario }} </td>
+            <td> <button (click)="removerItem(indice)"> Remover </button></td>
+        </tr>
+        } 
+        @empty {
+            <tr>
+                <td colspan="5"> Nenhum item adicionado até o momento. </td>
+            </tr>
+        }
+</table>
+
+<h3> Total: {{valorTotal | currency}}</h3>

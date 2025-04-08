@@ -1,0 +1,5 @@
+1. Início
+2.      Ler tabuada
+3.      resultado = (tabuada*1, tabuada*2, tabuada*3, tabuada*4, tabuada*5, tabuada*6, tabuada*7, tabuada*8, tabuada*9, tabuada*10)
+4.      Exibir (resultado)
+5. Fim

@@ -1,0 +1,6 @@
+1. Início
+2.      Ler raio
+3.      area = (raio * raio * 3.14) + 32
+4.      Exibir (area)
+5. Fim
+

@@ -1,0 +1,6 @@
+1. Início
+2.      Ler celsius
+3.      fahrenheit = (celsius * 9/5) + 32
+4.      Exibir (fahrenheit)
+5. Fim
+

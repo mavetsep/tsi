@@ -1,0 +1,12 @@
+1. Início
+2.      Ler nota1
+3.      Ler nota2
+4.      Ler nota3
+5.      Ler nota4
+6.      Ler peso1
+7.      Ler peso2
+8.      Ler peso3
+9.      Ler peso4
+10.     media = ((nota1*peso1) + (nota2*peso2) + (nota3*peso3) + (nota4+peso4)) / peso1 + peso2 + peso3 + peso4
+11.     Exibir (media)
+12. Fim

@@ -1,0 +1,22 @@
+Determine o valor de m, com m nos Reais, para que a função tenha valor mínimo igual a 3/4. 
+Função: f(x) = 2x² + x + m + 1
+
+A potência elétrica lançada num circuito, por um gerador é expressa pela expressão da imagem abaixo,
+em que i é a intensidade da corrente elétrica em ampares. 
+Calcule a intensidade da corrente para que se possa obter a potência máxima do gerador.
+p = 10i - 5i²
+
+Uma empresa freta um avião com 100 lugares para grupos de turistas. 
+Cada passageiro deve pagar R$ 800,00 e mais R$ 10,00 para cada lugar que ficar vago. 
+O número de passageiros que dá maior rentabilidade à empresa em uma excursão é:
+
+De acordo com a expressão abaixo, determine o valor de x + 2.
+(2/3)**x = 4**x
+
+Se P(0, a) é um ponto do gráfico g, então qual o valor de a, se
+g(x) = 3 * 2**x
+
+A massa de uma substância diminui com o tempo ao ser exposta a um reagente. 
+Em uma experiência, uma amostra possui de 1600 g foi exposta ao reagente. 
+Constatou-se que sua massa era reduzida a uma taxa de 25% por hora. 
+Determine em quanto tempo de degradação é necessário para restar 900 g da quantidade inicial.

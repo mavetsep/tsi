@@ -1,0 +1,7 @@
+1. Início
+2.      Ler nota1
+3.      Ler nota2
+4.      Ler nota3
+5.      media = (nota1 + nota2 + nota3) / 3
+6.      Exibir (media)
+7. Fim

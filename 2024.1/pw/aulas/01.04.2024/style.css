@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    user-select: none;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+}
+
+.imagem {
+    text-align: center;
+    padding: 1rem;
+    padding-top: 5rem;
+}
+
+.imagem img {
+    border-radius: 100%;
+    width: 128px;
+    height: 128px;
+    transition: 0.5s;
+}
+
+.imagem img:hover {
+    transform: scale(1.2);
+}
+
+.info {
+    color: white;
+    font-family:monospace
+}
+
+.info h1 {
+    color: brown;
+}
+
+.info ul {
+    list-style: none;
+}

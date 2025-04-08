@@ -1,0 +1,42 @@
+body {
+    background-color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
+table {
+    color: white;
+    padding: 1rem;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover {
+    color: grey;
+}
