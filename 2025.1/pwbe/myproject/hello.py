@@ -1,3 +1,18 @@
+# criar o ambiente virtual:
+# python -m venv .venv 
+
+# ativar o venv:
+# .venv\Scripts\activate 
+
+# instalar Flask:
+# pip install flask
+
+# rodar servidor:
+# flask --app *nome do arquivo* run --debug
+
+# deactivate (desativa o venv)
+
+
 from flask import Flask
 from flask import request
 from markupsafe import escape
@@ -30,10 +45,10 @@ def hello_user_dois(username):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-    user = request.form['username']
-    password =  request.form['password']
-    print(user)
-    print(password)
+        user = request.form['username']
+        password = request.form['password']
+        print(user)
+        print(password)
         return do_the_login()
     else:
         return render_template('login.html')

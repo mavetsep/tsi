@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Músicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .music-card {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .music-item {
+            transition: all 0.3s ease;
+        }
+        .music-item:hover {
+            background-color: #f8f9fa;
+        }
+        .actions {
+            min-width: 100px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="card music-card">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="m-0"><i class="fas fa-headphones me-2"></i>Minhas Músicas</h3>
+                <span class="badge bg-light text-dark">{{ musicas|length }} música{{ '' if musicas|length == 1 else 's' }}</span>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            {% if musicas %}
+            <div class="list-group">
+                {% for musica in musicas %}
+                <div class="list-group-item music-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <i class="fas fa-music text-primary me-3"></i>
+                        <span>{{ musica }}</span>
+                    </div>
+                    <div class="actions">
+                        <a href="{{ url_for('editar_musica', index=loop.index0) }}" class="btn btn-sm btn-outline-primary me-1">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ url_for('remover_musica', index=loop.index0) }}" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-4">
+                <i class="fas fa-exclamation-circle fa-3x text-muted mb-3"></i>
+                <h4>Sua lista de músicas está vazia</h4>
+                <p class="text-muted">Adicione músicas abaixo para começar</p>
+            </div>
+            {% endif %}
+            
+            <form class="mt-4" action="{{ url_for('adicionar_musica') }}" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="musica" placeholder="Nome da música" required>
+                    <button class="btn btn-success" type="submit">
+                        <i class="fas fa-plus me-1"></i>Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card-footer bg-transparent d-flex justify-content-between">
+            <a href="{{ url_for('bem_vindo') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i>Voltar
+            </a>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">
+                <i class="fas fa-sign-out-alt me-1"></i>Sair
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
