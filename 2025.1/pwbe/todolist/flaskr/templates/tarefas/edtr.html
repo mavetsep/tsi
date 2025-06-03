@@ -1,0 +1,19 @@
+<!-- forms de editar tarefa  -->
+
+{% extends 'base.html' %}
+
+{% block title %}Editar Tarefa{% endblock %}
+{% block header %}<h1>Editar Tarefa</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="descricao_tarefa">Nova Descrição:</label>
+    <input type="text" name="descricao_tarefa" id="descricao_tarefa" value="{{ request.form.descricao_tarefa or tarefa.descricao_tarefa }}" required>
+    <br>
+    <input type="checkbox" name="completada" id="completada" {% if tarefa.completada %}checked{% endif %}>
+    <label for="completada">Completada?</label>
+    <br><br>
+    <input type="submit" value="Salvar Tarefa">
+  </form>
+  <p><a href="{{ url_for('listas.detalhes_lista', id_lista=tarefa.lista_id) }}">Cancelar</a></p>
+{% endblock %}

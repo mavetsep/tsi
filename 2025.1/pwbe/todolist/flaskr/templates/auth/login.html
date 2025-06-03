@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block header %}<h1>Login</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="username">Usuário</label>
+    <input name="username" id="username" value="{{ request.form.username or '' }}" required>
+    <br>
+    <label for="password">Senha</label>
+    <input type="password" name="password" id="password" required>
+    <br>
+    <input type="submit" value="Entrar">
+  </form>
+  <p>Não tem conta? <a href="{{ url_for('auth.register') }}">Registre-se</a>.</p>
+{% endblock %}

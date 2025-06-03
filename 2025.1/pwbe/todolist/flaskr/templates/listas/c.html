@@ -1,0 +1,16 @@
+<!-- forms nova lista  -->
+
+{% extends 'base.html' %}
+
+{% block title %}Nova Lista{% endblock %}
+{% block header %}<h1>Criar Nova Lista de Tarefas</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="titulo">Título da Lista:</label>
+    <input type="text" name="titulo" id="titulo" value="{{ request.form.titulo or '' }}" required>
+    <br>
+    <input type="submit" value="Criar Lista">
+  </form>
+  <p><a href="{{ url_for('listas.index') }}">Cancelar</a></p>
+{% endblock %}

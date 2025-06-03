@@ -1,0 +1,19 @@
+<!-- editar ou deletar perfil -->
+
+{% extends 'base.html' %}
+
+{% block title %}Meu Perfil{% endblock %}
+{% block header %}<h1>Editar Perfil</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="username">Nome de Usuário:</label>
+    <input name="username" id="username" value="{{ request.form.username or g.usuario.username }}" required>
+    <br>
+    <input type="submit" value="Atualizar Nome">
+  </form>
+  <hr>
+  <form method="post" action="{{ url_for('auth.deletar_perfil') }}" onsubmit="return confirm('Tem certeza que quer deletar sua conta? Isso apagará TUDO!');">
+    <input type="submit" value="Deletar Minha Conta" style="background-color: red; color: white;">
+  </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS tarefa;
+DROP TABLE IF EXISTS lista_tarefas;
+DROP TABLE IF EXISTS usuario;
+
+CREATE TABLE usuario (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL
+);
+
+CREATE TABLE lista_tarefas (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  usuario_id INTEGER NOT NULL,
+  titulo TEXT NOT NULL,
+  criada_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuario (id) ON DELETE CASCADE
+);
+
+CREATE TABLE tarefa (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lista_id INTEGER NOT NULL,
+  descricao_tarefa TEXT NOT NULL,
+  completada BOOLEAN NOT NULL DEFAULT 0, -- 0 para pendente, 1 para completa
+  criada_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (lista_id) REFERENCES lista_tarefas (id) ON DELETE CASCADE
+);

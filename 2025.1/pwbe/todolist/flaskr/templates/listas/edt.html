@@ -1,0 +1,20 @@
+<!-- forms editar lista  -->
+
+{% extends 'base.html' %}
+
+{% block title %}Editar: {{ lista.titulo }}{% endblock %}
+{% block header %}<h1>Editar Lista: {{ lista.titulo }}</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="titulo">Novo Título:</label>
+    <input type="text" name="titulo" id="titulo" value="{{ request.form.titulo or lista.titulo }}" required>
+    <br>
+    <input type="submit" value="Salvar Alterações">
+  </form>
+  <hr>
+  <form method="post" action="{{ url_for('listas.deletar_lista', id_lista=lista.id) }}" onsubmit="return confirm('Deletar esta lista apagará todas as tarefas dentro dela. Continuar?');">
+    <input type="submit" value="Deletar Esta Lista" style="background-color: orange;">
+  </form>
+  <p><a href="{{ url_for('listas.detalhes_lista', id_lista=lista.id) }}">Cancelar Edição</a></p>
+{% endblock %}
