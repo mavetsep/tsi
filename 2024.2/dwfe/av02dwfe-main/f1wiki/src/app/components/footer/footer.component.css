@@ -1,0 +1,8 @@
+footer{
+    background-color: #18181b;
+}
+
+footer p {
+    color: white;
+    user-select: none;
+}
