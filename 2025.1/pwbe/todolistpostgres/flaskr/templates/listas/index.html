@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Suas Listas{% endblock %}
+{% block header %}
+    <h1>Minhas Listas</h1>
+    <p><a href="{{ url_for('listas.criar_lista') }}">Criar Nova Lista</a></p>
+{% endblock %}
+
+{% block content %}
+  {% if listas %}
+    <ul>
+      {% for lista_item in listas %}
+        <li>
+          <h2><a href="{{ url_for('listas.detalhes_lista', id_lista=lista_item.id) }}">{{ lista_item.titulo }}</a></h2>
+          <small>Criada em: {{ lista_item.criada_em.strftime('%d/%m/%Y') }}</small>
+          <p>
+            <a href="{{ url_for('listas.editar_lista', id_lista=lista_item.id) }}">Editar Lista</a>
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhuma lista ainda. <a href="{{ url_for('listas.criar_lista') }}">Crie sua primeira lista!</a></p>
+  {% endif %}
+{% endblock %}

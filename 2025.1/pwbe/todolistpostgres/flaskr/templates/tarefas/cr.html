@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Nova Tarefa para {{ lista.titulo }}{% endblock %}
+{% block header %}<h1>Adicionar Tarefa à Lista: {{ lista.titulo }}</h1>{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="descricao_tarefa">Descrição da Tarefa:</label>
+    <input type="text" name="descricao_tarefa" id="descricao_tarefa" value="{{ request.form.descricao_tarefa or '' }}" required autofocus>
+    <br>
+    <input type="submit" value="Adicionar Tarefa">
+  </form>
+  <p><a href="{{ url_for('listas.detalhes_lista', id_lista=lista.id) }}">Cancelar</a></p>
+{% endblock %}

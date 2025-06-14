@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista: {{ lista.titulo }}{% endblock %}
+{% block header %}
+    <h1>{{ lista.titulo }}</h1>
+    <p><a href="{{ url_for('tarefas.criar_tarefa', id_lista=lista.id) }}">Adicionar Nova Tarefa a esta Lista</a></p>
+{% endblock %}
+
+{% block content %}
+  <h3>Tarefas:</h3>
+  {% if tarefas %}
+    <ul>
+      {% for tarefa_item in tarefas %}
+        <li{% if tarefa_item.completada %} style="text-decoration: line-through; color: grey;"{% endif %}>
+          {{ tarefa_item.descricao_tarefa }}
+          <small>
+            (<a href="{{ url_for('tarefas.editar_tarefa', id_tarefa=tarefa_item.id) }}">Editar</a>)
+            
+            <form method="post" action="{{ url_for('tarefas.alternar_status_tarefa', id_tarefa=tarefa_item.id) }}" style="display: inline;">
+              <input type="submit" value="{% if tarefa_item.completada %}Marcar Pendente{% else %}Marcar Completa{% endif %}" style="font-size: 0.8em;">
+            </form>
+            
+            <form method="post" action="{{ url_for('tarefas.deletar_tarefa', id_tarefa=tarefa_item.id) }}" style="display: inline;" onsubmit="return confirm('Deletar esta tarefa?');">
+                <input type="submit" value="X" style="font-size: 0.8em; color: red; background: none; border: none; cursor: pointer;">
+            </form>
+          </small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhuma tarefa nesta lista ainda.</p>
+  {% endif %}
+  <hr>
+  <p><a href="{{ url_for('listas.index') }}">Voltar para todas as listas</a></p>
+{% endblock %}
